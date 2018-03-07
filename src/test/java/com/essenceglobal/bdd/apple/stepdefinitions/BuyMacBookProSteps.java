@@ -117,9 +117,7 @@ public class BuyMacBookProSteps {
         vatFromFeatureFile = priceAndVATAsMap.get("VAT");
         String totalPriceFromBagPage =bagPage.extractTotalPrice();
         String vatFromBagPage = bagPage.extractVAT();
-        //Assert.assertEquals(totalPriceFromFeatureFile, totalPriceFromBagPage);
         AssertionUtilities.assertStringEquals(totalPriceFromFeatureFile, totalPriceFromBagPage, "Expected total price from feature file "+totalPriceFromFeatureFile+ " Matches with the price in the application "+totalPriceFromBagPage,"Expected total price from feature file "+totalPriceFromFeatureFile+ " Does not match with the price in the application "+totalPriceFromBagPage );
-        //Assert.assertEquals(vatFromFeatureFile, vatFromBagPage);
         AssertionUtilities.assertStringEquals(vatFromFeatureFile, vatFromBagPage, "Expected VAT from feature file "+ vatFromFeatureFile + " Matches with the VAT from application "+vatFromBagPage, "Expected VAT from feature file "+ vatFromFeatureFile + " Does not match with the VAT from application "+vatFromBagPage);
         Reporter.addStepLog("Validated Price and VAT Successfully");
     }
